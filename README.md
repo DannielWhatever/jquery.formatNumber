@@ -1,24 +1,4 @@
-jquery.formatNumber
-===================
+jquery.formatNumber-modified
+=============================
 
-jQuery plugin for formatting numbers, good for currencies. Option to choose the cents and thousands digit. Defaults to US' 9,999.00.
-
-Usage: `$('.number').formatNumber();`
-
-This will make `<span class="number">2932389423</span>` for e.g., be formatted into `<span class="number">29,323,894.23</span>`.
-
-##Options
-
-
-	//produces 29,323,894.23 (e.g. US standard)
-	$('.number').formatNumber({
-	  cents: '.',
-	  decimal: ','
-	});
-	
-	//produces 29.323.894,23 (e.g. Brazil standard)
-	$('.number').formatNumber({
-	  cents: ',',
-	  decimal: '.'
-	});
-	
+Basado en el plugin de RaphaelDDL, pero con modificaciones para ajustar a un proyecto en el que necesitaba separador de miles y decimales, configurable. Dicha configuración se setea en la sessionStorage y para aplicar el plugin luego de setearlo se invoca a la función de jquery .darFormato() y .darFormatoInputs(), dependiendo del caso, estas estan en el archivo functions.js , ademas se agregan validaciones de jquery valdiator para separadores decimales con 'coma' , además de un metodo .toDouble() en el prototype de String , ya que un number en javascript siempre llevará 'punto' , aunque en nuestros formularios querramos mostrarlos con 'coma'. Eso, algún día arreglare este readme. See u later!
